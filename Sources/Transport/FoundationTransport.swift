@@ -38,6 +38,10 @@ public class FoundationTransport: NSObject, Transport, StreamDelegate {
     private var isTLS = false
     private var certPinner: CertificatePinning?
     
+    deinit {
+        disconnect()
+    }
+    
     public var usingTLS: Bool {
         return self.isTLS
     }
